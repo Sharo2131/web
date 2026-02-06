@@ -21,7 +21,7 @@
             overflow: hidden;
         }
 
-        /* Floating hearts background */
+        /* baground */
         .heart-background {
             position: fixed;
             width: 100%;
@@ -100,7 +100,7 @@
             }
         }
 
-        /* description removed from DOM per request */
+        
 
         .love-message {
             display: none;
@@ -124,7 +124,7 @@
             display: block;
             margin-top: 8px;
             font-size: 1.15em;
-            color: #ffffff; /* make name clearly visible */
+            color: #e6003a; /* sur #e6003a*/
             font-weight: 900;
             letter-spacing: 0.6px;
             text-shadow: 0 6px 18px rgba(0,0,0,0.6);
@@ -183,7 +183,7 @@
             transform: none !important;
         }
 
-        /* Success message */
+        /* yes message */
         .success-message {
             display: none;
             text-align: center;
@@ -230,7 +230,7 @@
             }
         }
 
-        /* Responsive */
+        
         @media (max-width: 600px) {
             .container {
                 padding: 40px 30px;
@@ -262,7 +262,7 @@
 
         <div class="love-message" id="loveMessage">
             <div class="love-phrase">i laiv you</div>
-            <div class="lover-name">xanda</div>
+            <div class="lover-name">Xanda</div>
         </div>
 
         <div class="buttons-container">
@@ -277,7 +277,7 @@
     </div>
 
     <script>
-        // Create floating hearts
+        // floating heart
         function createHearts() {
             const heartBg = document.getElementById('heartBg');
             for (let i = 0; i < 8; i++) {
@@ -292,7 +292,7 @@
             }
         }
 
-        // move ranodmm
+        // move ranodmmmm
         function moveButton() {
             const noBtn = document.getElementById('noBtn');
             const randomX = (Math.random() - 0.5) * 300;
@@ -301,7 +301,7 @@
             noBtn.style.transform = `translate(${randomX}px, ${randomY}px)`;
         }
 
-        // Celebrate Yes
+        
         function celebrateYes() {
             const buttons = document.querySelector('.buttons-container');
             buttons.style.display = 'none';
@@ -324,12 +324,12 @@
             const love = document.getElementById('loveMessage');
             if (love) love.classList.add('show');
 
-            // Create confetti
+            
             createConfetti();
         }
 
 
-        // Create confetti animation
+        //  animation
         function createConfetti() {
             const colors = ['#ff9ecb', '#ffc1dc', '#ffd6e8', '#ffb3d9', '#ffe6f2'];
             
@@ -354,3 +354,4 @@
 </body>
 
 </html>
+
