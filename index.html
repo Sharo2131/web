@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will You Be My Valentine?</title>
+    <title>Lara, Are You Happy?</title>
     <style>
         * {
             margin: 0;
@@ -19,34 +19,6 @@
             background: linear-gradient(135deg, #ffd6e8 0%, #fff0f6 100%);
             font-family: 'Arial', sans-serif;
             overflow: hidden;
-        }
-
-        /* baground */
-        .heart-background {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .heart {
-            position: absolute;
-            font-size: 2rem;
-            opacity: 0.6;
-            animation: float 6s infinite ease-in-out;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px) translateX(0px);
-                opacity: 0.6;
-            }
-            50% {
-                opacity: 0.8;
-            }
         }
 
         .container {
@@ -84,24 +56,6 @@
             text-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
         }
 
-        .emoji {
-            font-size: 3em;
-            margin: 8px 0 14px;
-            animation: heartbeat 1.2s infinite;
-            filter: drop-shadow(0 6px 14px rgba(0,0,0,0.35));
-        }
-
-        @keyframes heartbeat {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-        }
-
-        
-
         .love-message {
             display: none;
             margin-top: 18px;
@@ -118,16 +72,6 @@
             font-weight: 900;
             color: #ffffff;
             text-shadow: 0 8px 24px rgba(0,0,0,0.5);
-        }
-
-        .lover-name {
-            display: block;
-            margin-top: 8px;
-            font-size: 1.15em;
-            color: #e6003a; /* sur #e6003a*/
-            font-weight: 900;
-            letter-spacing: 0.6px;
-            text-shadow: 0 6px 18px rgba(0,0,0,0.6);
         }
 
         .buttons-container {
@@ -183,7 +127,6 @@
             transform: none !important;
         }
 
-        /* yes message */
         .success-message {
             display: none;
             text-align: center;
@@ -207,13 +150,6 @@
             }
         }
 
-        .success-text {
-            font-size: 2em;
-            color: #ff6b9a;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
         .confetti {
             position: fixed;
             pointer-events: none;
@@ -230,7 +166,6 @@
             }
         }
 
-        
         @media (max-width: 600px) {
             .container {
                 padding: 40px 30px;
@@ -254,59 +189,34 @@
     </style>
 </head>
 <body>
-    <div class="heart-background" id="heartBg"></div>
 
     <div class="container">
-        <div class="emoji">💕</div>
-        <h1>Will You Be My Valentine?</h1>
+        <h1>shera gyan choniii?</h1>
 
         <div class="love-message" id="loveMessage">
-            <div class="love-phrase">i laiv you</div>
-            <div class="lover-name">Xanda</div>
+            <div class="love-phrase">good beatiful sher 🦁</div>
         </div>
 
         <div class="buttons-container">
-            <button class="yes-btn" onclick="celebrateYes()">Yes! 💖</button>
-            <button class="no-btn" id="noBtn" onmouseover="moveButton()" onclick="moveButton()">No</button>
+            <button class="yes-btn" onclick="celebrateYes()">bashmmmm</button>
+            <button class="no-btn" id="noBtn" onmouseover="moveButton()" onclick="moveButton()">bashnim</button>
         </div>
 
-        <div class="success-message" id="successMessage">
-            <!-- success text removed per request -->
-        </div>
-
+        <div class="success-message" id="successMessage"></div>
     </div>
 
     <script>
-        // floating heart
-        function createHearts() {
-            const heartBg = document.getElementById('heartBg');
-            for (let i = 0; i < 8; i++) {
-                const heart = document.createElement('div');
-                heart.className = 'heart';
-                heart.innerHTML = '💗';
-                heart.style.left = Math.random() * 100 + '%';
-                heart.style.top = Math.random() * 100 + '%';
-                heart.style.animation = `float ${5 + Math.random() * 3}s infinite ease-in-out`;
-                heart.style.animationDelay = Math.random() * 2 + 's';
-                heartBg.appendChild(heart);
-            }
-        }
-
-        // move ranodmmmm
         function moveButton() {
             const noBtn = document.getElementById('noBtn');
             const randomX = (Math.random() - 0.5) * 300;
             const randomY = (Math.random() - 0.5) * 200;
-
             noBtn.style.transform = `translate(${randomX}px, ${randomY}px)`;
         }
 
-        
         function celebrateYes() {
             const buttons = document.querySelector('.buttons-container');
             buttons.style.display = 'none';
 
-            // create and insert the after-yes picture dynamically
             const img = document.createElement('img');
             img.src = 'image/yes.jpg';
             img.alt = 'After Yes';
@@ -320,19 +230,13 @@
 
             successMsg.classList.add('show');
 
-            // show the love message with name
             const love = document.getElementById('loveMessage');
             if (love) love.classList.add('show');
 
-            
             createConfetti();
         }
 
-
-        //  animation
         function createConfetti() {
-            const colors = ['#ff9ecb', '#ffc1dc', '#ffd6e8', '#ffb3d9', '#ffe6f2'];
-            
             for (let i = 0; i < 50; i++) {
                 const confetti = document.createElement('div');
                 confetti.className = 'confetti';
@@ -341,17 +245,10 @@
                 confetti.style.top = '-10px';
                 confetti.style.fontSize = (1 + Math.random() * 1.5) + 'em';
                 confetti.style.animation = `confetti-fall ${2 + Math.random() * 1}s linear`;
-                
                 document.body.appendChild(confetti);
-                
                 setTimeout(() => confetti.remove(), 3000);
             }
         }
-
-        // Initialize
-        createHearts();
     </script>
 </body>
-
 </html>
-
